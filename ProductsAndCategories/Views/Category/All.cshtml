@@ -1,0 +1,17 @@
+@model List<Category>
+<h1>Categories</h1>
+<a asp-controller="Category" asp-action="New">New Category</a>
+
+<ul>
+
+    @{
+        foreach (Category category in Model)
+        {
+            <div>
+                <li>@category.Name - - <a asp-controller="Category" asp-action="ShowDetails" asp-route-categoryId="@category.CategoryId">See Details</a></li>
+            </div>
+            
+        }
+    }
+
+</ul>

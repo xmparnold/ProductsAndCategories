@@ -1,0 +1,17 @@
+@model List<Product>
+<h1>Products</h1>
+<a asp-controller="Product" asp-action="New">New Product</a>
+
+<ul>
+
+    @{
+        foreach (Product product in Model)
+        {
+            <div>
+                <li>@product.Name - - <a asp-controller="Category" asp-action="ShowDetails" asp-route-productId="@product.ProductId">See Details</a></li>
+            </div>
+            
+        }
+    }
+
+</ul>

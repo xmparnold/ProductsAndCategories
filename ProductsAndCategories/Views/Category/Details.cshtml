@@ -1,0 +1,26 @@
+@model Category
+
+<h1>Category Details</h1>
+<h3>@Model.Name</h3>
+<h4>Products in Category</h4>
+<ul>
+    @{
+        foreach (var association in Model.Products)
+        {
+            if (association.Product != null)
+            {
+                <li>@association.Product.Name</li>
+            }
+            
+            
+        }
+
+        
+        
+    }
+</ul>
+
+@{
+    Association newAssociation = new Association();
+}
+<partial name="_Association" model="newAssociation" view-data="ViewData"></partial>
